@@ -40,6 +40,9 @@ defaults write /Users/"$loggedInUser"/Library/Preferences/com.apple.screencaptur
 # As we're root, amend ownership back to set for plist
 chown "$loggedInUser" /Users/"$loggedInUser"/Library/Preferences/com.apple.screencapture.plist
 
+# Correct the file mode
+chmod 755 /Users/"$loggedInUser"/Library/Preferences/com.apple.screencapture.plist
+
 # Restart SystemUIServer for changes to take affect
 killall SystemUIServer
 
